@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  mark-rdfz:
+    build: .
+    container_name: mark-rdfz
+    restart: always
+    ports:
+      - "127.0.0.1:8880:8880"
+    environment:
+      - PYTHONUNBUFFERED=1
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "20m"
+        max-file: "5"
